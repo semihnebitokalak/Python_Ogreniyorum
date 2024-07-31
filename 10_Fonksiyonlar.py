@@ -88,3 +88,78 @@ def topla():
 print("toplam : ",topla())
 print(k)
 print(l)
+
+# İçeriği olmayan fonksiyon nedir? Hemen örnekle daha iyi anlayalımmm...
+# Alt program(so fonksiyonlar)
+def top():
+    global t
+    global y 
+    t = 24
+    y = 3
+    return t + y
+""" 
+def cik():
+def bol():
+def carp():
+eğer yukaridaki gibi tanimlayip kodu çaliştirirsak hata aliriz. Bunu engellemek için pass ifadesini kullanıyoruz.
+"""
+def cik():
+    pass
+def bol():
+    pass
+def carp():
+    pass
+# Ana program
+print(top())
+print(cik())
+print(bol())
+print(carp())
+
+#Neden pass Kullanılır?
+#Yer Tutucu: Geliştirme sürecinde fonksiyonların yapısını belirlemek için kullanılır.
+#Hataları Önlemek: Henüz tamamlanmamış kod parçalarının çalışmasını sağlamak için kullanılır.
+#Okunabilirlik: Kodun ileride hangi işlemlerin yapılacağını belirten bir işaret olarak kullanılır.
+#Bu sayede, Python'da içeriği olmayan fonksiyonlar tanımlayabilir ve kodunuzu daha esnek ve yönetilebilir hale getirebilirsiniz.
+
+# Şimdi ise fonksiyon kısaltma işlemini öğreneceğiz.
+# Python'da fonksiyon kısaltma, genellikle lambda fonksiyonları kullanılarak yapılır. 
+# lambda fonksiyonları, tek satırlık küçük ve anonim (ismi olmayan) fonksiyonlar tanımlamak için kullanılır. 
+# lambda fonksiyonları, genellikle kısa ve basit işlemler için kullanılır ve daha okunabilir kod yazmayı sağlar.
+# hemen örnekle pekiştirelimmm..
+
+# Normal fonksiyon tanımlama
+def topla(i, j):
+    return i + j
+
+# Lambda fonksiyonu ile aynı işlevi yerine getirme
+topla_lambda = lambda i, j: i + j
+
+# Kullanımı
+print(topla(3, 4))          # Çıktı: 7
+print(topla_lambda(3, 4))   # Çıktı: 7
+
+# Şimdi bir diğer konu olan yinelemeli yani recursive fonksiyonları inceliyeceğiz.
+# Bu bahsettiğimiz recursive nedir?
+# Özyinelemeli (recursive) fonksiyonlar, kendilerini doğrudan veya dolaylı olarak çağıran fonksiyonlardır. 
+# Bu tür fonksiyonlar, bir problemi daha küçük alt problemlere bölerek çözerler ve genellikle belirli bir duruma ulaştığında dururlar.
+
+# üs alma işlemini yapalım.
+def üsalma(taban,üs):
+    if üs == 0:
+        return 1
+    else:
+        return taban * üsalma(taban,üs-1)
+taban = 3
+üs = 2
+print(üsalma(taban,üs))
+# Yukarıdaki kodu süsleyip kullanıcıdan taban ve üs kısımlarını alabiliriz.
+
+# Faktöriyel hesabı yapan recursive program
+def faktoriyel(n):
+    if n == 0:  # Temel durum
+        return 1
+    else:
+        return n * faktoriyel(n - 1)  # Özyineleme adımı
+
+# Örnek kullanım
+print(faktoriyel(5))  # Çıktı: 120
