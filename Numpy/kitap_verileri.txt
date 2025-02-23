@@ -1,0 +1,8 @@
+45 5 Roman
+85 6 Bilim
+45 2 Çocuk
+25 7 Tarih
+69 8 Roman
+85 9 Bilim
+45 10 Cocuk
+20 2 Yazilim
